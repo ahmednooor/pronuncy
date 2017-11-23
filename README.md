@@ -5,7 +5,7 @@ English Pronunciation App
 
 > `tkinter` for GUI with `python 3.6`.
 
-> either `pyglet` or `pygame` for sound playback.
+> `pygame` for sound playback.
 
 > `cx_freeze` to build executable.
 
