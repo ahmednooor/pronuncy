@@ -22,7 +22,6 @@ from tkinter import (
     messagebox,
     ttk
 )
-# import pyglet
 import pygame as pg
 
 
@@ -39,17 +38,6 @@ if getattr(sys, "frozen", False):
 else:
     # unfrozen
     THIS_FOLDER_G = os.path.dirname(os.path.realpath(__file__))
-
-
-# --- load "avbin" lib to pyglet
-# pyglet.lib.load_library(THIS_FOLDER_G + "/assets/lib/avbin.dll")
-# pyglet.have_avbin = True
-
-
-# --- init sound variable for later use
-# sound_obj = pyglet.media.load(THIS_FOLDER_G + "/assets/media/pyglet_init.mp3")
-# sound_obj.play()
-sound_obj = None
 
 
 # --- list to store words
@@ -86,7 +74,7 @@ def show_about_info():
                         """PRONUNCY is an English Pronunciation App
 Author: Ahmed Noor
 Credits: Pronunciations from Wikimedia Commons (CC 2.0)
-Made With: Python3.6 , Tkinter & Pyglet || Pygame""")
+Made With: Python3.6 , Tkinter & Pygame""")
 
 
 # --- create menu bar and options
@@ -229,16 +217,11 @@ def play_music(music_file, volume=0.8):
 
 # --- play audio file
 def play_audio_file(evt):
-    global sound_obj
-
     evt_widget = evt.widget
     index = int(evt_widget.curselection()[0])
     value = evt_widget.get(index)
 
     play_music(THIS_FOLDER_G + "/assets/eng-wcp-us/En-us-" + value + ".mp3")
-    # sound_obj = pyglet.media.load(THIS_FOLDER_G + "/assets/eng-wcp-us/En-us-" + value + ".mp3")
-    # sound_obj.play()
-    # sound_obj = None
 
 
 # --- decorator for binding functions to tkinter widgets
